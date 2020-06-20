@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Owner\Desktop\final project test\JMRFinalProject\JMRFinalProject\Preprocess.h(77,2): warning C4091: 'static ': ignored on left of 'PreProc' when no variable is declared
+C:\Users\Owner\Desktop\final project test\JMRFinalProject\JMRFinalProject\Training.h(44,2): warning C4091: 'static ': ignored on left of 'Training' when no variable is declared
+opencv_world420d.lib(opencv_world420d.dll) : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'x86'
