@@ -26,9 +26,6 @@
     <ClInclude Include="Preprocess.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Training.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Detect.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -17,7 +17,7 @@ static class Detect
 public:
 	static std::vector<Detection> objDetect(std::string file, bool silent = false, int displayTime = 0, float threshold = 0.5, float nms = 0.4)
 	{
-		cv::dnn::Net network = cv::dnn::readNet("../../tensorflow/frozen_inference_graph.pb", "../../tensorflow/ssd_mobilenet_v2_coco_2018_03_29.pbtxt");
+		cv::dnn::Net network = cv::dnn::readNet("../../../tensorflow/frozen_inference_graph.pb", "../../../tensorflow/ssd_mobilenet_v2_coco_2018_03_29.pbtxt");
 		std::vector<Detection> objectsfound;
 		cv::Mat objects = object(file, network, objectsfound, threshold, nms);
 		if (!silent)
@@ -25,6 +25,11 @@ public:
 			cv::namedWindow("Classified image", cv::WINDOW_AUTOSIZE);
 			cv::imshow("Classified image", objects);
 			cv::waitKey(displayTime);
+		}
+		if (network.empty())
+		{
+			std::cout << "No Network Found! Quitting Program." << std::endl;
+			exit(0);
 		}
 		return objectsfound;
 	}
@@ -35,6 +40,11 @@ private:
 		std::vector<std::string> list = { "background", "person", "bicycle", "car", "motercycle", "airplane", "bus", "train", "truck", "boat", "traffic light", "fire hydrant", "12", "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "26", "backpack", "umbrella", "29", "30", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball", "kite", "baseball bat", "baseball glove", "skateboard", "surfboard", "tennis racket", "bottle", "45", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "bananna", "apple", "sandwich", "orange", "brocolli", "carrot", "hot dog", "pizza", "donut", "cake", "chair", "couch", "potted plant", "bed", "66", "dining table", "68", "69", "toilet", "71", "tv", "laptop", "mouse", "remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink", "refrigerator", "83", "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush" };
 		std::vector<std::string> layers = network.getUnconnectedOutLayersNames();
 		cv::Mat image = cv::imread(file);
+		if (image.empty())
+		{
+			std::cout << "No Image Found! Quitting Program." << std::endl;
+			exit(0);
+		}
 		cv::Mat output = image;
 		cv::Mat blob = cv::dnn::blobFromImage(image);
 		network.setInput(blob);

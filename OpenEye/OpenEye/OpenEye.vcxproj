@@ -223,7 +223,6 @@
     <ClInclude Include="datatypes.h" />
     <ClInclude Include="MiscFuncs.h" />
     <ClInclude Include="Preprocess.h" />
-    <ClInclude Include="Training.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
