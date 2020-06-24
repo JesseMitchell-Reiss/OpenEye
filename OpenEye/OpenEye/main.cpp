@@ -41,6 +41,8 @@ int main(int argc, char** argv)
 	string modeltxt = parser.get<string>("modeltxt");
 	string modelcfg = parser.get<string>("modelcfg");
 	string directory = parser.get<string>("directory");
+	//values
+	//string thresh = parser.get<string>("thresh");
 	//modes
 	bool silent = false;
 	if (parser.has("silent"))
