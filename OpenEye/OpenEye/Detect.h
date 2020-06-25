@@ -15,17 +15,11 @@ static class Detect
 {
 
 public:
-	static std::vector<Detection> objDetect(std::string file, bool silent = false, int displayTime = 0, float threshold = 0.5, float nms = 0.4)
+	static std::vector<Detection> objDetect(std::string file, cv::Mat& output, float threshold = 0.5, float nms = 0.4)
 	{
 		cv::dnn::Net network = cv::dnn::readNet("../../../tensorflow/frozen_inference_graph.pb", "../../../tensorflow/ssd_mobilenet_v2_coco_2018_03_29.pbtxt");
 		std::vector<Detection> objectsfound;
-		cv::Mat objects = object(file, network, objectsfound, threshold, nms);
-		if (!silent)
-		{
-			cv::namedWindow("Classified image", cv::WINDOW_AUTOSIZE);
-			cv::imshow("Classified image", objects);
-			cv::waitKey(displayTime);
-		}
+		output = object(file, network, objectsfound, threshold, nms);
 		if (network.empty())
 		{
 			std::cout << "No Network Found! Quitting Program." << std::endl;

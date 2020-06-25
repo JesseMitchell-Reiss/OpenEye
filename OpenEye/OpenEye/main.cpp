@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 		"{ modelcfg c		| ../../tensorflow/| Model configuration file. }"
 		"{ imagepath i		| ../../input/image-1.jpg | Path of image to detect objects in. }"
 		"{ directory p		| ../../input/tensorflow/mscoco_complete_label_map.json | Directory of image set. }"
-		"{ thresh			| 0.5 | Confidence threshold. }"
+		"{ thresh			| 0.5 | Confidence threshold necessary for detection. }"
 		"{ nms				| 0.4 | Non maximum supression threshold. }"
 		"{ disp				| 0 | Image display time, 0 to wait for  a key to be pressed. }"
 		;
@@ -50,8 +50,15 @@ int main(int argc, char** argv)
 	//functions
 	if (parser.has("detect"))
 	{
+		cv::Mat img;
 		std::cout << imagepath << std::endl;
-		Detect::objDetect(imagepath, silent/*, displaytime, thresh, nms*/);
+		Detect::objDetect(imagepath, img/*, thresh, nms*/);
+		if (!silent)
+		{
+			cv::namedWindow("Classified image", cv::WINDOW_AUTOSIZE);
+			cv::imshow("Classified image", img);
+			cv::waitKey(0);
+		}
 	}
 	if (parser.has("help"))
 		parser.printMessage();

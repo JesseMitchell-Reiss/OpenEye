@@ -222,6 +222,7 @@
     <ClInclude Include="Detect.h" />
     <ClInclude Include="datatypes.h" />
     <ClInclude Include="MiscFuncs.h" />
+    <ClInclude Include="parser.h" />
     <ClInclude Include="Preprocess.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
