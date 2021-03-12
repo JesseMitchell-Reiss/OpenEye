@@ -1,4 +1,2 @@
-﻿  main.cpp
-C:\Users\Owner\Desktop\final project test\JMRFinalProject\JMRFinalProject\Preprocess.h(77,2): warning C4091: 'static ': ignored on left of 'PreProc' when no variable is declared
-C:\Users\Owner\Desktop\final project test\JMRFinalProject\JMRFinalProject\Training.h(44,2): warning C4091: 'static ': ignored on left of 'Training' when no variable is declared
-opencv_world420d.lib(opencv_world420d.dll) : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'x86'
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (JMRFinalProject.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+opencv_world451d.lib(opencv_world451d.dll) : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'x86'

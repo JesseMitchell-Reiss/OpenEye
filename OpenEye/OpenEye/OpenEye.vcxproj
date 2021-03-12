@@ -133,7 +133,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\Libraries\TensorFlowGPU\lib;$(SolutionDir)..\Libraries\opencv\build\x64\vc15\lib;$(SolutionDir)..\Libraries\boost_1_67_0\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(SolutionDir)..\Libraries\TensorFlowGPU\lib\tensorflow.lib;$(SolutionDir)..\Libraries\opencv\build\x64\vc15\lib\opencv_world420d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)..\Libraries\TensorFlowGPU\lib\tensorflow.lib;$(SolutionDir)..\Libraries\opencv\build\x64\vc15\lib\opencv_world451d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -180,7 +180,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\Libraries\opencv\build\x64\vc15\lib;$(SolutionDir)..\Libraries\TensorFlowGPU\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(SolutionDir)..\Libraries\TensorFlowGPU\lib\tensorflow.lib;$(SolutionDir)..\Libraries\opencv\build\x64\vc15\lib\opencv_world430d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)..\Libraries\TensorFlowGPU\lib\tensorflow.lib;$(SolutionDir)..\Libraries\opencv\build\x64\vc15\lib\opencv_world451d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
