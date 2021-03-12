@@ -27,9 +27,6 @@ int main(int argc, char** argv)
 		"{ modelcfg c		| ../../tensorflow/| Model configuration file. }"
 		"{ imagepath i		| ../../input/image-1.jpg | Path of image to detect objects in. }"
 		"{ directory p		| ../../input/tensorflow/mscoco_complete_label_map.json | Directory of image set. }"
-		"{ thresh			| 0.5 | Confidence threshold necessary for detection. }"
-		"{ nms				| 0.4 | Non maximum supression threshold. }"
-		"{ disp				| 0 | Image display time, 0 to wait for  a key to be pressed. }"
 		;
 	//create cli parser
 	CommandLineParser parser(argc, argv, keys);
@@ -41,8 +38,6 @@ int main(int argc, char** argv)
 	string modeltxt = parser.get<string>("modeltxt");
 	string modelcfg = parser.get<string>("modelcfg");
 	string directory = parser.get<string>("directory");
-	//values
-	//string thresh = parser.get<string>("thresh");
 	//modes
 	bool silent = false;
 	if (parser.has("silent"))
@@ -50,9 +45,10 @@ int main(int argc, char** argv)
 	//functions
 	if (parser.has("detect"))
 	{
+		std::cout << "test" << std::endl;
 		cv::Mat img;
 		std::cout << imagepath << std::endl;
-		Detect::objDetect(imagepath, img/*, thresh, nms*/);
+		Detect::objDetect(imagepath, img);
 		if (!silent)
 		{
 			cv::namedWindow("Classified image", cv::WINDOW_AUTOSIZE);
